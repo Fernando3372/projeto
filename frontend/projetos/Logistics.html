@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistics</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f6f9;
+  color:#222;
+  transition:0.3s;
+}
+
+header{
+  background:#0f172a;
+  color:white;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+}
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:100px 20px;
+}
+
+.hero{
+  padding-top:140px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+.btn{
+  background:#1e293b;
+  color:white;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  text-align:center;
+  margin-top:40px;
+}
+
+.stat{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tracking{
+  margin-top:30px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.tracking input{
+  padding:12px;
+  flex:1;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+.tracking button{
+  padding:12px 20px;
+  border:none;
+  background:#1e293b;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+form{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input,textarea{
+  padding:10px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+button.enviar{
+  background:#1e293b;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+footer{
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:50px;
+}
+
+@media (max-width: 768px){
+  nav{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:80px 15px;
+  }
+
+  .btn{
+    display:inline-block;
+  }
+
+  .tracking{
+    flex-direction:column;
+  }
+
+  .tracking input,
+  .tracking button{
+    width:100%;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <h2>Logistics</h2>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#empresa">Empresa</a></li>
+      <li><a href="#rastreamento">Rastreamento</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <h1>Logística Inteligente para o Mundo Moderno</h1>
+  <p>
+    A Logistics oferece soluções completas em transporte,
+    armazenagem e distribuição para empresas de todos os tamanhos.
+  </p>
+  <a class="btn" href="#servicos">Conheça nossos serviços</a>
+</section>
+
+<section id="servicos">
+  <h2>Nossos Serviços</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Transporte Rodoviário</h3>
+      <p>Entrega rápida e segura em todo território nacional.</p>
+    </div>
+    <div class="card">
+      <h3>Armazenagem</h3>
+      <p>Centros logísticos modernos para armazenamento eficiente.</p>
+    </div>
+    <div class="card">
+      <h3>Distribuição</h3>
+      <p>Gestão completa da cadeia de distribuição.</p>
+    </div>
+    <div class="card">
+      <h3>Logística Empresarial</h3>
+      <p>Soluções personalizadas para grandes empresas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="empresa">
+  <h2>Sobre a Logistics</h2>
+  <p>
+    A Logistics é uma empresa fictícia criada para protótipos
+    de projetos institucionais. Nosso objetivo é demonstrar soluções
+    modernas de logística e transporte utilizando tecnologia e
+    gestão eficiente da cadeia de suprimentos.
+  </p>
+  <div class="stats">
+    <div class="stat">
+      <h3>15+</h3>
+      <p>Anos de experiência</p>
+    </div>
+    <div class="stat">
+      <h3>1200+</h3>
+      <p>Clientes atendidos</p>
+    </div>
+    <div class="stat">
+      <h3>300+</h3>
+      <p>Veículos na frota</p>
+    </div>
+    <div class="stat">
+      <h3>98%</h3>
+      <p>Entregas no prazo</p>
+    </div>
+  </div>
+</section>
+
+<section id="rastreamento">
+  <h2>Rastreamento de Carga</h2>
+  <p>Digite o código de rastreamento da sua entrega.</p>
+  <div class="tracking">
+    <input type="text" id="codigo" placeholder="Ex: TRX123456">
+    <button onclick="rastrear()">Rastrear</button>
+  </div>
+  <p class="result" id="resultado"></p>
+</section>
+
+<section id="contato">
+  <h2>Fale Conosco</h2>
+  <form>
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu email" required>
+    <textarea rows="5" placeholder="Digite sua mensagem"></textarea>
+    <button class="enviar">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Logistics - Todos os direitos reservados</p>
+</footer>
+
+<script>
+function rastrear(){
+  let codigo = document.getElementById("codigo").value
+  if(codigo == ""){
+    document.getElementById("resultado").innerText = "Digite um código válido."
+  }else{
+    document.getElementById("resultado").innerText = "Carga em transporte • Previsão de entrega: 2 dias."
+  }
+}
+</script>
+
+</body>
+</html>
+

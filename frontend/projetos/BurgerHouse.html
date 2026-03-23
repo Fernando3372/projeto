@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BurgerHouse</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+/* MENU */
+
+header{
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+header h1{
+color:#ffb700;
+}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ffb700;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1550547660-d9450f859349") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero div{
+position:relative;
+z-index:2;
+}
+
+.hero h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+background:#ffb700;
+color:black;
+padding:15px 35px;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+}
+
+/* SOBRE */
+
+.sobre{
+padding:80px 10%;
+text-align:center;
+}
+
+.sobre h2{
+font-size:35px;
+margin-bottom:20px;
+color:#ffb700;
+}
+
+/* CARDÁPIO */
+
+.cardapio{
+padding:80px 10%;
+}
+
+.cardapio h2{
+text-align:center;
+margin-bottom:50px;
+color:#ffb700;
+font-size:35px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.item{
+background:#1b1b1b;
+border-radius:10px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.item:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.item img{
+width:100%;
+height:200px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.item:hover img{
+transform:scale(1.1);
+}
+
+.info{
+padding:20px;
+text-align:center;
+}
+
+.preco{
+color:#ffb700;
+font-size:18px;
+font-weight:bold;
+}
+
+/* GALERIA */
+
+.galeria{
+padding:80px 10%;
+text-align:center;
+}
+
+.galeria h2{
+color:#ffb700;
+margin-bottom:40px;
+}
+
+.galeria-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.galeria-grid img{
+width:100%;
+border-radius:10px;
+transition:0.4s;
+}
+
+.galeria-grid img:hover{
+transform:scale(1.05);
+}
+
+/* AVALIAÇÕES */
+
+.avaliacoes{
+padding:80px 10%;
+background:#141414;
+text-align:center;
+}
+
+.avaliacoes h2{
+color:#ffb700;
+margin-bottom:40px;
+}
+
+.depoimentos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.depoimento{
+background:#1f1f1f;
+padding:25px;
+border-radius:10px;
+}
+
+/* CONTATO */
+
+.contato{
+padding:80px 10%;
+text-align:center;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+input,textarea{
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+background:#ffb700;
+border:none;
+padding:14px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* MAPA */
+
+.mapa{
+padding:80px 10%;
+text-align:center;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+font-size:22px;
+padding:16px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+width:100%;
+text-align:center;
+padding:30px 0;
+background:linear-gradient(180deg,#000,#111);
+color:#ccc;
+font-size:14px;
+letter-spacing:1px;
+}
+
+footer .marca{
+color:#ffcc00;
+font-weight:bold;
+}
+
+/* ANIMAÇÃO SCROLL */
+
+section{
+opacity:0;
+transform:translateY(40px);
+transition:0.6s;
+}
+
+/* RESPONSIVO CELULAR */
+@media (max-width: 768px){
+
+/* HEADER */
+header{
+flex-direction: column;
+gap: 10px;
+padding:15px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+nav a{
+margin:0;
+}
+
+/* HERO */
+.hero{
+height:70vh;
+padding:20px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+/* SOBRE */
+.sobre{
+padding:50px 20px;
+}
+
+/* CARDÁPIO */
+.cardapio{
+padding:50px 20px;
+}
+
+.cardapio h2{
+font-size:28px;
+}
+
+/* GALERIA */
+.galeria{
+padding:50px 20px;
+}
+
+/* AVALIAÇÕES */
+.avaliacoes{
+padding:50px 20px;
+}
+
+/* CONTATO */
+.contato{
+padding:50px 20px;
+}
+
+/* MAPA */
+.mapa{
+padding:50px 20px;
+}
+
+/* BOTÃO WHATSAPP */
+.whatsapp{
+font-size:18px;
+padding:12px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>🍔 Burger House</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#sobre">Sobre</a>
+<a href="#cardapio">Cardápio</a>
+<a href="#galeria">Galeria</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h2>Melhor Hambúrguer Gourmet</h2>
+<p>Sabor artesanal que conquista qualquer cliente</p>
+<a class="btn" href="#cardapio">Ver Cardápio</a>
+</div>
+</section>
+
+<section class="sobre" id="sobre">
+<h2>Sobre a Lanchonete</h2>
+<p>
+Hambúrgueres artesanais feitos com ingredientes frescos,
+batatas crocantes e molhos especiais preparados na casa.
+Qualidade e sabor em cada pedido.
+</p>
+</section>
+
+<section class="cardapio" id="cardapio">
+
+<h2>Nosso Cardápio</h2>
+
+<div class="grid">
+
+<div class="item">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<div class="info">
+<h3>Classic Burger</h3>
+<p>Pão brioche, carne e queijo</p>
+<p class="preco">R$ 25</p>
+</div>
+</div>
+
+<div class="item">
+<img src="https://images.unsplash.com/photo-1550317138-10000687a72b">
+<div class="info">
+<h3>Bacon Burger</h3>
+<p>Hambúrguer com bacon crocante</p>
+<p class="preco">R$ 29</p>
+</div>
+</div>
+
+<div class="item">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<div class="info">
+<h3>Duplo Smash</h3>
+<p>Duas carnes e cheddar</p>
+<p class="preco">R$ 32</p>
+</div>
+</div>
+
+<div class="item">
+<img src="https://folhago.com.br/blogs/receitas-faceis/wp-content/uploads/2022/08/Batata-frita-crocante-1024x683.jpg">
+<div class="info">
+<h3>Batata Especial</h3>
+<p>Batata frita com molho</p>
+<p class="preco">R$ 18</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="galeria" id="galeria">
+
+<h2>Galeria</h2>
+
+<div class="galeria-grid">
+
+<img src="https://www.planobhamburgueria.com.br/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-24-at-11.01.21-1.jpeg">
+<img src="data:image/webp;base64,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">
+<img src="https://th.bing.com/th/id/R.b7e60a02c8c093bab94a3b3bf2c4ec70?rik=D%2fXM0J%2bw4wyD4w&pid=ImgRaw&r=0">
+</div>
+
+</section>
+
+<section class="avaliacoes">
+
+<h2>O que nossos clientes dizem</h2>
+
+<div class="depoimentos">
+
+<div class="depoimento">
+⭐⭐⭐⭐⭐
+<p>Melhor hambúrguer que já comi!</p>
+<strong>Lucas</strong>
+</div>
+
+<div class="depoimento">
+⭐⭐⭐⭐⭐
+<p>Entrega rápida e muito sabor.</p>
+<strong>Amanda</strong>
+</div>
+
+<div class="depoimento">
+⭐⭐⭐⭐⭐
+<p>Muito Bom!</p>
+<strong>Rafael</strong>
+</div>
+
+</div>
+
+</section>
+
+<section class="contato" id="contato">
+
+<h2>Contato</h2>
+
+<form>
+
+<input type="text" placeholder="Seu nome">
+
+<input type="tel" id="whatsappInput" placeholder="Seu WhatsApp">
+
+<textarea placeholder="Mensagem"></textarea>
+
+<button>Enviar</button>
+
+</form>
+
+</section>
+
+<section class="mapa">
+
+<h2>Onde estamos</h2>
+
+<iframe
+src="https://www.google.com/maps?q=São+Paulo&output=embed"
+width="100%"
+height="350"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/5511999999999" target="_blank">📱</a>
+
+<footer>
+<p>© 2026 - Site desenvolvido por <span class="marca">ZD Digital</span></p>
+</footer>
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+
+sections.forEach(sec => {
+
+const top = window.scrollY;
+const offset = sec.offsetTop - 400;
+
+if(top > offset){
+sec.style.opacity = "1";
+sec.style.transform = "translateY(0)";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
